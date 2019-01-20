@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { createPaper, addCell } from '../helpers/linking';
+import { createPaper, renderCells } from '../helpers/linking';
+import json from '../static/temp.json';
 
 
 class CPaper extends Component {
@@ -17,12 +18,8 @@ class CPaper extends Component {
   }
 
   _renderPaper() {
-    const { height, width } = this._ref.getBoundingClientRect();
     createPaper(this._ref);
-    const x = width / 2;
-    const y = height / 2;
-    addCell({ x, y });
-    addCell({ x: x + 180, y: y + 70 });
+    renderCells(json);
   }
 }
 

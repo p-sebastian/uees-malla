@@ -1,7 +1,8 @@
 import * as joint from 'jointjs';
 
 const graph = new joint.dia.Graph();
-let cells = {};
+const cells = {};
+const sum = [0];
 
 /**
  * creates the paper
@@ -65,48 +66,98 @@ export const renderCells = (data = []) => {
   let x = 0;
   let y = 0;
   data.forEach((year, yi) => {
+    // sum.year = {};
+    sum[yi + 1] = {};
     year.forEach((semester, si) => {
+      /**
+       * saves sum.year.semester = its position in row vertically
+       */
+      sum[yi + 1][si + 1] = si + sum[0] + 1;
       semester.forEach(({ pos, id, name }) => {
         // set x coor based on course position.
         const offset = pos - 1;
         x = offset * (width + margin); 
-        const cell = `c-malla:${yi + 1}-${si + 1}-${id}`;
+        const cell = `c-malla:${yi + 1}-${si + 1}-${pos}-${id}`;
         addCell({ x, y }, cell, { title: id, subtitle: name });
       });
       x = 0;
       y += 70 + margin;
     })
+    sum[0] += year.length;
   });
-  renderLinksAfter(data);
+  ordering(data);
 }
 
-/**
- * draws links on paper
- * @param {string} source 
- * @param {[dependants]} targets 
- */
-export const renderLinks = (source, targets) => {
-  const links = [];
-  targets.forEach(({ year, semester, id }) => {
-    const link = new joint.shapes.standard.Link();
-    link.source(cells[source]);
-    link.target(cells[`c-malla:${year}-${semester}-${id}`]);
-    link.router('manhattan');
-    link.connector('jumpover');
-    links.push(link);
-  });
-  graph.addCells(links);
-}
 
-const renderLinksAfter = (data = []) => {
+const ordering = (data = []) => {
   data.forEach((year, yi) => {
     year.forEach((semester, si) => {
       semester.forEach(course => {
-        const cell = `c-malla:${yi + 1}-${si + 1}-${course.id}`;
+        const cell = `c-malla:${yi + 1}-${si + 1}-${course.pos}-${course.id}`;
+        // only adds links if it has dependants
         if (course.dependants && course.dependants.length) {
           renderLinks(cell, course.dependants);
         }
       });
     })
   });
+}
+
+/**
+ * draws links on paper
+ * @param {string} target 
+ * @param {[dependants]} sources 
+ */
+const renderLinks = (target, sources) => {
+  const links = [];
+  sources.forEach(source => {
+    links.push(createLink(target, source));
+  });
+  graph.addCells(links);
+}
+
+/**
+ * Creates pathfinding link using the manhattan router
+ * @param {string} targetKey 
+ * @param {dependants} dependant 
+ */
+const createLink = (targetKey, dependant) => {
+  const { year, semester, id, pos } = dependant;
+  const source = cells[`c-malla:${year}-${semester}-${pos}-${id}`];
+  const target = cells[targetKey];
+  const link = new joint.shapes.standard.Link({ source, target });
+  routing(link, targetKey, dependant);
+  return link;
+}
+
+/**
+ * sets routing of links, when source is directly above target
+ * it will connect 'bottom' source to 'top' target
+ * if source is close by a factor of 1, diagonally or horizontally
+ * it will connect from opposite sides, source:left -> target:right and viceversa
+ * if target is far away > 1; it will connect source:bottom -> target:top
+ * @param {joint.shapes.standard.Link} link 
+ * @param {string} targetKey 
+ * @param {dependants} source 
+ */
+const routing = (link, targetKey, { year, semester, pos }) => {
+  const [tYear, tSemester, tPos] = targetKey.split(':')[1].split('-');
+  let start = ['left', 'right', 'top', 'bottom'];
+  let end = ['left', 'right', 'top', 'bottom'];
+  // source semester is < target semester
+  if (sum[year][semester] < sum[tYear][tSemester]) {
+    const isVertical = pos === tPos;
+    const isClose = pos + 1 === tPos || pos - 1 === tPos;
+    if (isVertical) { start = ['bottom']; end = ['top']; }
+    if (isClose) { start = ['left', 'right']; end = ['left', 'right']; }
+    if (!isVertical && !isClose) {
+      start = ['bottom']; end = ['top'];
+    }
+  }
+  link.router('manhattan', {
+    'step': 20,
+    'startDirections': start,
+    'endDirections': end
+  });
+  link.connector('jumpover');
 }

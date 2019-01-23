@@ -1,14 +1,21 @@
 import * as joint from 'jointjs';
 
-const graph = new joint.dia.Graph();
-const cells = {};
-const sum = [0];
+let graph = new joint.dia.Graph();
+let cells = {};
+let sum = [0];
+let courses = {};
 
 /**
  * creates the paper
  * @param {HTMLElement} ref 
  */
-export const createPaper = (ref) => {
+export const createPaper = ref => {
+  // reset on init
+  graph = new joint.dia.Graph();
+  cells = {};
+  sum = [0];
+  courses = {};
+
   const { height, width } = ref.getBoundingClientRect();
   new joint.dia.Paper({
     el: ref,
@@ -66,18 +73,21 @@ export const renderCells = (data = []) => {
   let x = 0;
   let y = 0;
   data.forEach((year, yi) => {
-    // sum.year = {};
-    sum[yi + 1] = {};
+    const YEAR = yi + 1;
+    sum[YEAR] = {};
     year.forEach((semester, si) => {
+      const SEMESTER = si + 1;
       /**
        * saves sum.year.semester = its position in row vertically
        */
-      sum[yi + 1][si + 1] = si + sum[0] + 1;
-      semester.forEach(({ pos, id, name }) => {
+      sum[YEAR][SEMESTER] = SEMESTER + sum[0];
+      semester.forEach(course => {
+        const { pos, id, name } = course;
         // set x coor based on course position.
         const offset = pos - 1;
         x = offset * (width + margin); 
-        const cell = `c-malla:${yi + 1}-${si + 1}-${pos}-${id}`;
+        saveCourses(course, YEAR, SEMESTER);
+        const cell = `c-malla:${YEAR}-${SEMESTER}-${pos}-${id}`;
         addCell({ x, y }, cell, { title: id, subtitle: name });
       });
       x = 0;
@@ -85,33 +95,44 @@ export const renderCells = (data = []) => {
     })
     sum[0] += year.length;
   });
-  ordering(data);
+  ordering();
 }
 
 
-const ordering = (data = []) => {
-  data.forEach((year, yi) => {
-    year.forEach((semester, si) => {
-      semester.forEach(course => {
-        const cell = `c-malla:${yi + 1}-${si + 1}-${course.pos}-${course.id}`;
-        // only adds links if it has dependants
-        if (course.dependants && course.dependants.length) {
-          renderLinks(cell, course.dependants);
-        }
-      });
-    })
-  });
+const ordering = () => {
+  for (let key in courses) {
+    const { year, semester, pos, id, dependants } = courses[key];
+    const cell = `c-malla:${year}-${semester}-${pos}-${id}`;
+    // only adds links if it has dependants
+    if (dependants && dependants.length) {
+      renderLinks(cell, dependants);
+    }
+  }
+}
+
+/**
+ * save course data, for easier access later
+ * @param {course} course 
+ * @param {number} year 
+ * @param {number} semester 
+ */
+const saveCourses = (course, year, semester) => {
+  courses[course.id] = {
+    ...course,
+    year,
+    semester
+  };
 }
 
 /**
  * draws links on paper
  * @param {string} target 
- * @param {[dependants]} sources 
+ * @param {[number]} sources
  */
 const renderLinks = (target, sources) => {
   const links = [];
-  sources.forEach(source => {
-    links.push(createLink(target, source));
+  sources.forEach((id) => {
+    links.push(createLink(target, courses[id]));
   });
   graph.addCells(links);
 }

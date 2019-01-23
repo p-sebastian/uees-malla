@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { createPaper, renderCells } from '../helpers/linking';
-import json from '../static/temp.json';
+import json from '../static/sistemas.json';
 
 
 class CPaper extends Component {

@@ -86,8 +86,8 @@ export const renderCells = (data = []) => {
         // set x coor based on course position.
         const offset = pos - 1;
         x = offset * (width + margin); 
-        saveCourses(course, YEAR, SEMESTER);
         const cell = `c-malla:${YEAR}-${SEMESTER}-${pos}-${id}`;
+        saveCourses(course, YEAR, SEMESTER, cell);
         addCell({ x, y }, cell, { title: id, subtitle: name });
       });
       x = 0;
@@ -101,11 +101,10 @@ export const renderCells = (data = []) => {
 
 const ordering = () => {
   for (let key in courses) {
-    const { year, semester, pos, id, dependants } = courses[key];
-    const cell = `c-malla:${year}-${semester}-${pos}-${id}`;
+    const { dependants, cellId } = courses[key];
     // only adds links if it has dependants
     if (dependants && dependants.length) {
-      renderLinks(cell, dependants);
+      renderLinks(cellId, dependants);
     }
   }
 }
@@ -114,13 +113,15 @@ const ordering = () => {
  * save course data, for easier access later
  * @param {course} course 
  * @param {number} year 
- * @param {number} semester 
+ * @param {number} semester
+ * @param {string} cellId
  */
-const saveCourses = (course, year, semester) => {
+const saveCourses = (course, year, semester, cellId) => {
   courses[course.id] = {
     ...course,
     year,
-    semester
+    semester,
+    cellId
   };
 }
 

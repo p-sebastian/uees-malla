@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { createPaper, renderCells } from '../helpers/linking';
-import json from '../static/sistemas.json';
+import { createPaper, renderCells, parseData } from '../helpers/linking';
+import json from '../static/arte.json';
+import sistemas from '../static/sistemas.json';
 
 
 class CPaper extends Component {
@@ -19,7 +20,10 @@ class CPaper extends Component {
 
   _renderPaper() {
     createPaper(this._ref);
-    renderCells(json);
+    const data = parseData(json)[0];
+    console.info(data);
+    console.info(sistemas);
+    renderCells(data);
   }
 }
 

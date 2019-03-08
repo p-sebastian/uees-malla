@@ -1,0 +1,232 @@
+[
+	{
+		"anio": [
+			{
+				"semestre": [
+					{
+						"materia": [
+							{
+								"ID": 222,
+								"name": "ABDOMEN AGUDO",
+								"pos": 1,
+								"dependants": [
+
+								]
+							},
+							{
+								"ID": 223,
+								"name": "ABASTECIMIENTO DE AGUA",
+								"pos": 2,
+								"dependants": [
+
+								]
+							},
+							{
+								"ID": 224,
+								"name": " DESARROLLO ORGANIZACIONAL",
+								"pos": 3,
+								"dependants": [
+
+								]
+							},
+							{
+								"ID": 227,
+								"name": "ACTUACION I",
+								"pos": 6,
+								"dependants": [
+
+								]
+							},
+							{
+								"ID": 228,
+								"name": "ACTUACION II",
+								"pos": 7,
+								"dependants": [
+
+								]
+							},
+							{
+								"ID": 229,
+								"name": "ACTUACION V",
+								"pos": 5,
+								"dependants": [
+
+								]
+							},
+							{
+								"ID": 230,
+								"name": "ACTUACION Y CONCIENCIA CORPORAL",
+								"pos": 8,
+								"dependants": [
+
+								]
+							},
+							{
+								"ID": 231,
+								"name": "ACTUACION I",
+								"pos": 9,
+								"dependants": [
+
+								]
+							},
+							{
+								"ID": 233,
+								"name": "ACTUACION VIII",
+								"pos": 10,
+								"dependants": [
+
+								]
+							}
+						]
+					},
+					{
+						"materia": [
+							{
+								"ID": 234,
+								"name": "ADAPTACION DE LA EMPRESA AL MERCADO GLOBAL",
+								"pos": 1,
+								"dependants": [
+									{
+										"ID": 227
+									}
+								]
+							},
+							{
+								"ID": 235,
+								"name": "ADICCIONES",
+								"pos": 2,
+								"dependants": [
+									{
+										"ID": 228
+									},
+									{
+										"ID": 229
+									},
+									{
+										"ID": 234
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"semestre": [
+					{
+						"materia": [
+							{
+								"ID": 204,
+								"name": "ANALISIS DE LA FORMA MUSICAL II",
+								"pos": 1,
+								"dependants": [
+
+								]
+							},
+							{
+								"ID": 205,
+								"name": "ADMINISTRACION DE OPERACIONES",
+								"pos": 2,
+								"dependants": [
+
+								]
+							},
+							{
+								"ID": 206,
+								"name": "ADMINISTRACION DEL TIEMPO",
+								"pos": 3,
+								"dependants": [
+
+								]
+							},
+							{
+								"ID": 208,
+								"name": "ADMINISTRACION PUBLICA",
+								"pos": 5,
+								"dependants": [
+
+								]
+							},
+							{
+								"ID": 209,
+								"name": "ADMINISTRACION DE PROYECTOS CONSULTORIA ARQUITECTONICA",
+								"pos": 6,
+								"dependants": [
+
+								]
+							},
+							{
+								"ID": 210,
+								"name": "ACONDICIONAMIENTO TERMICO AMBIENTAL",
+								"pos": 7,
+								"dependants": [
+
+								]
+							},
+							{
+								"ID": 219,
+								"name": "ADMINISTRACION DEL TIEMPO",
+								"pos": 8,
+								"dependants": [
+
+								]
+							}
+						]
+					},
+					{
+						"materia": [
+							{
+								"ID": 211,
+								"name": "ACTUACION III",
+								"pos": 1,
+								"dependants": [
+
+								]
+							},
+							{
+								"ID": 212,
+								"name": "ANALISIS DE ALGORITMOS",
+								"pos": 2,
+								"dependants": [
+
+								]
+							},
+							{
+								"ID": 213,
+								"name": "ADMINISTRACION E IMPLEMENTACION DE MANEJADORES DE BASES DE DATOS EN SQL",
+								"pos": 3,
+								"dependants": [
+
+								]
+							},
+							{
+								"ID": 214,
+								"name": "ADMINISTRACION DE HOSPITALARIA",
+								"pos": 4,
+								"dependants": [
+
+								]
+							},
+							{
+								"ID": 216,
+								"name": "ADMINISTRACION EDUCATIVA",
+								"pos": 6,
+								"dependants": [
+
+								]
+							},
+							{
+								"ID": 218,
+								"name": "ANALISIS CUANTITATIVOS PARA LA TOMA DE DESICIONES",
+								"pos": 5,
+								"dependants": [
+
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+]

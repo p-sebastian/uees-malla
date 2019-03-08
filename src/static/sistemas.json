@@ -74,7 +74,19 @@
         "id": 12,
         "name": "Estructura de Datos",
         "pos": 3,
-        "dependants": [7]
+        "dependants": [7, 13]
+      },
+      {
+        "id": 13,
+        "name": "Base de datos I",
+        "pos": 4,
+        "dependants": [12]
+      },
+      {
+        "id": 14,
+        "name": "Algebra Lineal",
+        "pos": 5,
+        "dependants": [6]
       }
     ]
   ]

@@ -183,3 +183,11 @@ const routing = (link, targetKey, { year, semester, pos }) => {
   });
   link.connector('jumpover');
 }
+
+export const parseData = (data = []) => {
+  return data
+    .map(y => 
+      y.anio.map(s => 
+        s.semestre.map(m =>
+          m.materia.map(({ ID, name, pos, dependants }) => ({ id: ID, name, pos, dependants: dependants.map(d => d.ID) })))))
+}

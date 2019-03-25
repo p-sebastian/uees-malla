@@ -1,0 +1,945 @@
+[
+	{
+		"anio": [
+			{
+				"semestre": [
+					{
+						"materia": [
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 154,
+								"ID": 1,
+								"name": "FISICA I",
+								"pos": 1,
+								"cod_materia": "UFIS105",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+
+								]
+							},
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 154,
+								"ID": 2,
+								"name": "MATEMATICAS I",
+								"pos": 2,
+								"cod_materia": "UMAT102",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+
+								]
+							},
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 154,
+								"ID": 3,
+								"name": "COMPUTACION Y SOCIEDAD",
+								"pos": 3,
+								"cod_materia": "UCOM103",
+								"obligatorio": "SI",
+								"total_horas": "448",
+								"creditos_acad": "4.67",
+								"materia_aprobada": "N",
+								"dependants": [
+
+								]
+							},
+							{
+								"campo_formacion": 36,
+								"unidad_curricular": 154,
+								"ID": 4,
+								"name": "TECNOLOGIAS DE LA INFORMACION",
+								"pos": 4,
+								"cod_materia": "UCOM000",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+
+								]
+							},
+							{
+								"campo_formacion": 35,
+								"unidad_curricular": 154,
+								"ID": 55,
+								"name": "LENGUAJE ESPA�OL",
+								"pos": 6,
+								"cod_materia": "UCMU148",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+
+								]
+							}
+						]
+					},
+					{
+						"materia": [
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 154,
+								"ID": 5,
+								"name": "FISICA II",
+								"pos": 1,
+								"cod_materia": "UFIS150",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+
+								]
+							},
+							{
+								"campo_formacion": 35,
+								"unidad_curricular": 154,
+								"ID": 56,
+								"name": "NUEVAS TECNOLOGIAS",
+								"pos": 6,
+								"cod_materia": "UIEX201",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+
+								]
+							},
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 154,
+								"ID": 6,
+								"name": "MATEMATICAS II",
+								"pos": 2,
+								"cod_materia": "UMAT192",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 2
+									}
+								]
+							},
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 154,
+								"ID": 7,
+								"name": "FUNDAMENTOS DE PROGRAMACION",
+								"pos": 3,
+								"cod_materia": "UCOM190",
+								"obligatorio": "SI",
+								"total_horas": "448",
+								"creditos_acad": "4.67",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 3
+									},
+									{
+										"ID": 4
+									}
+								]
+							},
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 154,
+								"ID": 8,
+								"name": "MATEMATICAS DISCRETAS",
+								"pos": 4,
+								"cod_materia": "UMAT191",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 2
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"semestre": [
+					{
+						"materia": [
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 154,
+								"ID": 10,
+								"name": "LOGICA DIGITAL",
+								"pos": 1,
+								"cod_materia": "UELE240",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 5
+									}
+								]
+							},
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 154,
+								"ID": 11,
+								"name": "MATEMATICAS III",
+								"pos": 2,
+								"cod_materia": "UMAT202",
+								"obligatorio": "SI",
+								"total_horas": "576",
+								"creditos_acad": "6",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 6
+									}
+								]
+							},
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 154,
+								"ID": 12,
+								"name": "BASE DE DATOS I",
+								"pos": 3,
+								"cod_materia": "UCOM204",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 7
+									}
+								]
+							},
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 154,
+								"ID": 13,
+								"name": "TEORIA DE SE�ALES",
+								"pos": 4,
+								"cod_materia": "UTEL204",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 8
+									}
+								]
+							},
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 154,
+								"ID": 14,
+								"name": "ALGEBRA LINEAL",
+								"pos": 5,
+								"cod_materia": "UMAT205",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 7
+									}
+								]
+							}
+						]
+					},
+					{
+						"materia": [
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 154,
+								"ID": 17,
+								"name": "SIMULACION",
+								"pos": 1,
+								"cod_materia": "UTEL250",
+								"obligatorio": "SI",
+								"total_horas": "448",
+								"creditos_acad": "4.67",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 12
+									}
+								]
+							},
+							{
+								"campo_formacion": 36,
+								"unidad_curricular": 154,
+								"ID": 18,
+								"name": "ECOLOGIA",
+								"pos": 2,
+								"cod_materia": "UCEC171",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+
+								]
+							},
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 154,
+								"ID": 19,
+								"name": "PROGRAMACION ORIENTADA A OBJETOS",
+								"pos": 3,
+								"cod_materia": "UCOM252",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 12
+									}
+								]
+							},
+							{
+								"campo_formacion": 37,
+								"unidad_curricular": 154,
+								"ID": 20,
+								"name": "PROBABILIDAD Y ESTADISTICAS",
+								"pos": 5,
+								"cod_materia": "UMAT251",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 11
+									}
+								]
+							},
+							{
+								"campo_formacion": 35,
+								"unidad_curricular": 154,
+								"ID": 21,
+								"name": "COMERCIO ELECTRONICO",
+								"pos": 6,
+								"cod_materia": "UIEX254",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 56
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"semestre": [
+					{
+						"materia": [
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 155,
+								"ID": 22,
+								"name": "REDES Y COMUNICACIONES",
+								"pos": 1,
+								"cod_materia": "UTEL360",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 10
+									},
+									{
+										"ID": 17
+									}
+								]
+							},
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 154,
+								"ID": 23,
+								"name": "TEORIA Y CIRCUITOS ELECTRICOS",
+								"pos": 2,
+								"cod_materia": "UELE302",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 5
+									}
+								]
+							},
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 155,
+								"ID": 24,
+								"name": "INTRODUCCION A LAS TELECOMUNICACIONES",
+								"pos": 4,
+								"cod_materia": "UTEL303",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 13
+									}
+								]
+							},
+							{
+								"campo_formacion": 37,
+								"unidad_curricular": 156,
+								"ID": 25,
+								"name": "ESCRITURA ACAD�MICA",
+								"pos": 5,
+								"cod_materia": "UCMU258",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 20
+									},
+									{
+										"ID": 55
+									}
+								]
+							},
+							{
+								"campo_formacion": 35,
+								"unidad_curricular": 154,
+								"ID": 26,
+								"name": "EMPRENDIMIENTO E INNOVACION TECNOLOGICO",
+								"pos": 6,
+								"cod_materia": "UIEX305",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 21
+									}
+								]
+							}
+						]
+					},
+					{
+						"materia": [
+							{
+								"campo_formacion": 38,
+								"unidad_curricular": 155,
+								"ID": 27,
+								"name": "GESTION Y ADMINISTRACION DE REDES",
+								"pos": 1,
+								"cod_materia": "UTEL350",
+								"obligatorio": "SI",
+								"total_horas": "448",
+								"creditos_acad": "4.67",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 22
+									}
+								]
+							},
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 155,
+								"ID": 28,
+								"name": "ELECTRONICA I",
+								"pos": 2,
+								"cod_materia": "UELE351",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 23
+									}
+								]
+							},
+							{
+								"campo_formacion": 36,
+								"unidad_curricular": 155,
+								"ID": 29,
+								"name": "ETICA",
+								"pos": 3,
+								"cod_materia": "UFIL274",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+
+								]
+							},
+							{
+								"campo_formacion": 38,
+								"unidad_curricular": 155,
+								"ID": 30,
+								"name": "SISTEMAS DE COMUNICACIONES ANALOGICAS Y DIGITALES",
+								"pos": 4,
+								"cod_materia": "UTEL352",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 24
+									}
+								]
+							},
+							{
+								"campo_formacion": 37,
+								"unidad_curricular": 156,
+								"ID": 31,
+								"name": "METODOLOGIA DE LA INVESTIGACION",
+								"pos": 5,
+								"cod_materia": "USSC244",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 25
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"semestre": [
+					{
+						"materia": [
+							{
+								"campo_formacion": 38,
+								"unidad_curricular": 155,
+								"ID": 32,
+								"name": "FIBRA OPTICA Y SCE",
+								"pos": 1,
+								"cod_materia": "UTEL431",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 27
+									}
+								]
+							},
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 155,
+								"ID": 33,
+								"name": "ELECTRONICA II",
+								"pos": 2,
+								"cod_materia": "UELE402",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 28
+									}
+								]
+							},
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 155,
+								"ID": 35,
+								"name": "TEORIA ELECTROMAGNETICA",
+								"pos": 3,
+								"cod_materia": "UTEL433",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 23
+									}
+								]
+							},
+							{
+								"campo_formacion": 38,
+								"unidad_curricular": 155,
+								"ID": 36,
+								"name": "TELEFONIA Y REDES DE NUEVA GENERACION",
+								"pos": 4,
+								"cod_materia": "UTEL432",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 30
+									}
+								]
+							},
+							{
+								"campo_formacion": 37,
+								"unidad_curricular": 156,
+								"ID": 37,
+								"name": "METOD. DE LA INVESTIGACION II",
+								"pos": 5,
+								"cod_materia": "USSC324",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 31
+									}
+								]
+							},
+							{
+								"campo_formacion": 37,
+								"unidad_curricular": 156,
+								"ID": 38,
+								"name": "PRACTICAS Y VINCULACION I",
+								"pos": 6,
+								"cod_materia": "UPRA404",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+
+								]
+							}
+						]
+					},
+					{
+						"materia": [
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 155,
+								"ID": 39,
+								"name": "FUNDAMENTOS DE LA SEGURIDAD DE LA INFORMACION",
+								"pos": 1,
+								"cod_materia": "UCOM457",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 32
+									}
+								]
+							},
+							{
+								"campo_formacion": 38,
+								"unidad_curricular": 155,
+								"ID": 40,
+								"name": "ROBOTICA Y MICROCONTROLADORES",
+								"pos": 2,
+								"cod_materia": "UTEL450",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 17
+									},
+									{
+										"ID": 19
+									},
+									{
+										"ID": 33
+									}
+								]
+							},
+							{
+								"campo_formacion": 38,
+								"unidad_curricular": 155,
+								"ID": 41,
+								"name": "PROPAGACION DE ONDAS",
+								"pos": 3,
+								"cod_materia": "UTEL462",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 35
+									}
+								]
+							},
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 155,
+								"ID": 42,
+								"name": "TRANSMISION DE DATOS Y PROTOCOLOS",
+								"pos": 4,
+								"cod_materia": "UTEL463",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 36
+									}
+								]
+							},
+							{
+								"campo_formacion": 37,
+								"unidad_curricular": 156,
+								"ID": 43,
+								"name": "TITULACION I",
+								"pos": 5,
+								"cod_materia": "UINV454",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 37
+									}
+								]
+							},
+							{
+								"campo_formacion": 37,
+								"unidad_curricular": 156,
+								"ID": 44,
+								"name": "PRACTICAS Y VINCULACION II",
+								"pos": 6,
+								"cod_materia": "UPRA455",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 38
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"semestre": [
+					{
+						"materia": [
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 155,
+								"ID": 45,
+								"name": "CRIPTOGRAFIA",
+								"pos": 1,
+								"cod_materia": "UCOM506",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 39
+									}
+								]
+							},
+							{
+								"campo_formacion": 38,
+								"unidad_curricular": 155,
+								"ID": 46,
+								"name": "MARCO LEGAL Y REGULATORIO DE LA TELECOMUNICACION",
+								"pos": 2,
+								"cod_materia": "UTEL502",
+								"obligatorio": "SI",
+								"total_horas": "448",
+								"creditos_acad": "4.67",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 39
+									}
+								]
+							},
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 155,
+								"ID": 47,
+								"name": "MICROONDAS Y TRANSMISION SATELITAL",
+								"pos": 3,
+								"cod_materia": "UTEL503",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 41
+									}
+								]
+							},
+							{
+								"campo_formacion": 37,
+								"unidad_curricular": 156,
+								"ID": 48,
+								"name": "TITULACI�N II",
+								"pos": 5,
+								"cod_materia": "UINV504",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 43
+									}
+								]
+							},
+							{
+								"campo_formacion": 37,
+								"unidad_curricular": 156,
+								"ID": 49,
+								"name": "PRACTICAS Y VINCULACION III",
+								"pos": 6,
+								"cod_materia": "UPRA505",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 44
+									}
+								]
+							}
+						]
+          },
+            {
+						"materia": [
+							{
+								"campo_formacion": 34,
+								"unidad_curricular": 155,
+								"ID": 50,
+								"name": "HACKEO ETICO",
+								"pos": 1,
+								"cod_materia": "UCOM551",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 45
+									}
+								]
+							},
+							{
+								"campo_formacion": 38,
+								"unidad_curricular": 155,
+								"ID": 51,
+								"name": "LINEAS DE TRANSMISION",
+								"pos": 2,
+								"cod_materia": "UTEL554",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 35
+									}
+								]
+							},
+							{
+								"campo_formacion": 38,
+								"unidad_curricular": 155,
+								"ID": 52,
+								"name": "COMUNICACIONES INAL�MBRICAS FIJAS Y M�VILES",
+								"pos": 3,
+								"cod_materia": "UTEL553",
+								"obligatorio": "SI",
+								"total_horas": "448",
+								"creditos_acad": "4.67",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 47
+									}
+								]
+							},
+							{
+								"campo_formacion": 38,
+								"unidad_curricular": 155,
+								"ID": 53,
+								"name": "MULTIPLEXION Y MULTICANALIZACION DIGITAL",
+								"pos": 4,
+								"cod_materia": "UTEL555",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 42
+									}
+								]
+							},
+							{
+								"campo_formacion": 37,
+								"unidad_curricular": 156,
+								"ID": 54,
+								"name": "TITULACION III",
+								"pos": 5,
+								"cod_materia": "UINV552",
+								"obligatorio": "SI",
+								"total_horas": "288",
+								"creditos_acad": "3",
+								"materia_aprobada": "N",
+								"dependants": [
+									{
+										"ID": 48
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+]

@@ -3,6 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { createPaper, renderCells, parseData } from '../helpers/linking';
 import json from '../static/arte.json';
 import sistemas from '../static/sistemas.json';
+import teleco from '../static/telecomunicaciones.json';
 
 
 class CPaper extends Component {
@@ -11,16 +12,18 @@ class CPaper extends Component {
   }
 
   render() {
-    const { paper } = this.props.classes;
+    const { paper, container } = this.props.classes;
 
     return (
-      <div className={paper} ref={ref => this._ref = ref}></div>
+      <div className={container}>
+        <div className={paper} ref={ref => this._ref = ref}></div>
+      </div>
     );
   }
 
   _renderPaper() {
     createPaper(this._ref);
-    const data = parseData(json)[0];
+    const data = parseData(teleco)[0];
     console.info(data);
     console.info(sistemas);
     renderCells(data);
@@ -30,7 +33,10 @@ class CPaper extends Component {
 const styles = {
   paper: {
     width: '100%',
-    height: '100%'
+    height: '2000px',
+  },
+  container: {
+    padding: '10px'
   }
 };
 

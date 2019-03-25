@@ -1,4 +1,5 @@
 import * as joint from 'jointjs';
+import { COLORS } from './colors';
 
 let graph = new joint.dia.Graph();
 let cells = {};
@@ -23,20 +24,28 @@ export const createPaper = ref => {
     interactive: false,
     height,
     width,
-    gridSize: 20, // pixels
-    drawGrid: 'mesh'
+    gridSize: 10, // pixels
+    // drawGrid: 'mesh'
   });
 };
+
+/**
+ * @typedef {({ id: number, year: number, semester: number, pos: number })} dependants
+ * @typedef {({ id: number, name: string, pos: number, cod_materia: string, obligatorio: boolean, total_horas: number, creditos_acad: string, materia_aprobada: boolean, campo_formacion: number, dependants: [dependants] })} course
+ * @typedef {([[[course]]])} jsonData
+ */
 
 /**
  * create a cell and add it to the graph
  * cells are 180px in width and 70px in height, each
  * @param {{ x: number, y: number }} position of cell
  * @param {string} id of cell
- * @param {{ title: string, subtitle: string }} text cell text 
+ * @param {course} course
  * @param {{ text: string, cell: string }} color hex string color for the 2 elements
  */
-export const addCell = (position, id, { title, subtitle } = { title: 'default', subtitle: 'default' }, color = {}) => {
+export const addCell = (position, id, course, color = {}) => {
+  const { name, total_horas, obligatorio, cod_materia, campo_formacion } = course;
+  const { fill, text } = COLORS[campo_formacion];
   const cell = new joint.shapes.org.Member({
     position,
     /**
@@ -44,10 +53,10 @@ export const addCell = (position, id, { title, subtitle } = { title: 'default', 
      */
     id: id,
     attrs: {
-        '.card': { fill: color.cell },
+        '.card': { fill },
           // image: { 'xlink:href': 'images/'+ image, opacity: 0.7 },
-        '.rank': { text: title, fill: color.text, 'word-spacing': '-5px', 'letter-spacing': 0},
-        '.name': { text: subtitle, fill: color.text, 'font-size': 10, 'font-family': 'Arial', 'letter-spacing': 0 }
+        '.rank': { text: `${cod_materia} (${total_horas})`, fill: text, 'font-family': 'Arial', 'letter-spacing': 0, 'text-decoration': 'none' },
+        '.name': { text: name, fill: text, 'font-size': 8, 'font-family': 'Arial', 'letter-spacing': 0 }
     }
   });
   // save cells for linking
@@ -56,18 +65,12 @@ export const addCell = (position, id, { title, subtitle } = { title: 'default', 
 }
 
 /**
- * @typedef {({ id: number, year: number, semester: number, pos: number })} dependants
- * @typedef {({ id: number, name: string, pos: number, dependants: [dependants] })} course
- * @typedef {([[[course]]])} jsonData
- */
-
-/**
  * 
  * @param {jsonData} data 
  */
 export const renderCells = (data = []) => {
   // must be the same as the cell element
-  const width = 180;
+  const width = 200;
   // bottom, right margin
   const margin = 70;
   let x = 0;
@@ -82,13 +85,13 @@ export const renderCells = (data = []) => {
        */
       sum[YEAR][SEMESTER] = SEMESTER + sum[0];
       semester.forEach(course => {
-        const { pos, id, name } = course;
+        const { pos, id } = course;
         // set x coor based on course position.
         const offset = pos - 1;
         x = offset * (width + margin); 
         const cell = `c-malla:${YEAR}-${SEMESTER}-${pos}-${id}`;
         saveCourses(course, YEAR, SEMESTER, cell);
-        addCell({ x, y }, cell, { title: id, subtitle: name });
+        addCell({ x, y }, cell, course);
       });
       x = 0;
       y += 70 + margin;
@@ -162,26 +165,35 @@ const createLink = (targetKey, dependant) => {
  * @param {string} targetKey 
  * @param {dependants} source 
  */
-const routing = (link, targetKey, { year, semester, pos }) => {
-  const [tYear, tSemester, tPos] = targetKey.split(':')[1].split('-');
+const routing = (link, targetKey, { year, semester, pos, id }) => {
+  const [tYear, tSemester, tPosStr] = targetKey.split(':')[1].split('-');
+  const tPos = Number(tPosStr);
+  const dif = sum[tYear][tSemester] - sum[year][semester];
+  // const sourceSum = sum[year][semester];
+  // const targetSum = sum[tYear][tSemester];
   let start = ['left', 'right', 'top', 'bottom'];
   let end = ['left', 'right', 'top', 'bottom'];
   // source semester is < target semester
-  if (sum[year][semester] < sum[tYear][tSemester]) {
+  if (dif > 0) {
     const isVertical = pos === tPos;
     const isClose = pos + 1 === tPos || pos - 1 === tPos;
+    const isBeginning = pos === 1;
+    const isFar = !isVertical && !isClose;
+    
+    console.info(`${id}, isClose: ${isClose}, isVertical: ${isVertical}, pos: ${typeof pos}, tpos: ${typeof tPos}`);
+
     if (isVertical) { start = ['bottom']; end = ['top']; }
     if (isClose) { start = ['left', 'right']; end = ['left', 'right']; }
-    if (!isVertical && !isClose) {
-      start = ['bottom']; end = ['top'];
-    }
+    if (isFar) { start = ['bottom']; end = ['top']; }
+    if (isBeginning && isFar) { start = ['right']; end = ['left']; }
+    if (isBeginning && isVertical && dif > 1) { start = ['right']; end = ['right']; }
+    link.connector(isVertical && dif === 1 ? 'normal' : 'jumpover');
   }
   link.router('manhattan', {
-    'step': 20,
+    'step': 10,
     'startDirections': start,
     'endDirections': end
   });
-  link.connector('jumpover');
 }
 
 export const parseData = (data = []) => {
@@ -189,5 +201,31 @@ export const parseData = (data = []) => {
     .map(y => 
       y.anio.map(s => 
         s.semestre.map(m =>
-          m.materia.map(({ ID, name, pos, dependants }) => ({ id: ID, name, pos, dependants: dependants.map(d => d.ID) })))))
+          m.materia.map(({ ID, name, pos, dependants, cod_materia, obligatorio, total_horas, creditos_acad, materia_aprobada, campo_formacion }) => {
+            return ({ 
+              id: ID, 
+              name: parseName(name), 
+              pos, 
+              dependants: dependants.map(d => d.ID),
+              cod_materia,
+              obligatorio: obligatorio === 'SI' ? true : false,
+              materia_aprobada: materia_aprobada === 'N' ? false : true,
+              total_horas: Number(total_horas),
+              creditos_acad,
+              campo_formacion
+            })
+          }))))
+}
+
+/**
+ * adds a new line char, if name has more than 3 words
+ * @param {string} name 
+ */
+const parseName = name => {
+  const words = name.split(' ');
+  if (words.length > 3) {
+    words.splice(3, 0, '\n');
+    return words.join(' ');
+  }
+  return name;
 }

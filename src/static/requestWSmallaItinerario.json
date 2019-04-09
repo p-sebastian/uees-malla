@@ -1,0 +1,825 @@
+[
+  {
+    "anio": [
+      {
+        "orden": 1,
+        "semestre": [
+          {
+            "orden": 1,
+            "materia": [
+              {
+                "ID": 149,
+                "name": "FISICA I",
+                "pos": 1,
+                "cod_materia": "UFIS105",
+                "total_horas": 288,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 161,
+                "name": "LABORATORIO-F¿SICA I",
+                "pos": 2,
+                "cod_materia": "UFIS102",
+                "total_horas": 96,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "1.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 169,
+                "name": "MATEMATICAS I",
+                "pos": 3,
+                "cod_materia": "UMAT102",
+                "total_horas": 288,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 181,
+                "name": "QUIMICA GENERAL",
+                "pos": 4,
+                "cod_materia": "UQUI101",
+                "total_horas": 288,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 187,
+                "name": "LABORATORIO DE QUIMICA GENERAL",
+                "pos": 5,
+                "cod_materia": "UQUI102",
+                "total_horas": 96,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "1.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 190,
+                "name": "INTRODUCCION A LA INGENIERIA AMBIENTAL",
+                "pos": 6,
+                "cod_materia": "UAMB100",
+                "total_horas": 288,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 204,
+                "name": "ZOOLOGIA GENERAL",
+                "pos": 7,
+                "cod_materia": "UBIO150",
+                "total_horas": 288,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              }
+            ]
+          },
+          {
+            "orden": 2,
+            "materia": [
+              {
+                "ID": 216,
+                "name": "FISICA II",
+                "pos": 1,
+                "cod_materia": "UFIS150",
+                "total_horas": 288,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 220,
+                "name": "LABORATORIO-F¿SICA II",
+                "pos": 2,
+                "cod_materia": "UFIS162",
+                "total_horas": 96,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "1.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 225,
+                "name": "MATEMATICAS II",
+                "pos": 3,
+                "cod_materia": "UMAT192",
+                "total_horas": 288,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 233,
+                "name": "QUÍMICA ANALÍTICA",
+                "pos": 4,
+                "cod_materia": "UQUI221",
+                "total_horas": 288,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 238,
+                "name": "LABORATORIO-QUÍMICA ANALÍTICA",
+                "pos": 5,
+                "cod_materia": "UQUI222",
+                "total_horas": 96,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "1.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 242,
+                "name": "BOTÁNICA",
+                "pos": 6,
+                "cod_materia": "UBIO221",
+                "total_horas": 288,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 248,
+                "name": "ECOLOGIA",
+                "pos": 7,
+                "cod_materia": "UCEC171",
+                "total_horas": 288,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 36,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orden": 2,
+        "semestre": [
+          {
+            "orden": 3,
+            "materia": [
+              {
+                "ID": 255,
+                "name": "GEOLOGIA",
+                "pos": 1,
+                "cod_materia": "UICV243",
+                "total_horas": 288,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 261,
+                "name": "GEOMETRIA Y TRIGONOMETRIA",
+                "pos": 2,
+                "cod_materia": "UMAT108",
+                "total_horas": 288,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 265,
+                "name": "ELEMENTOS DE ECONOMIA",
+                "pos": 4,
+                "cod_materia": "UECO101",
+                "total_horas": 288,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 271,
+                "name": "BIOLOGIA GENERAL",
+                "pos": 5,
+                "cod_materia": "UBIO200",
+                "total_horas": 288,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 276,
+                "name": "TECNOLOGIAS DE LA INFORMACION",
+                "pos": 7,
+                "cod_materia": "UCOM000",
+                "total_horas": 288,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 35,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 281,
+                "name": "LENGUAJE ESPAÑOL",
+                "pos": 8,
+                "cod_materia": "UCMU148",
+                "total_horas": 288,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 35,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              }
+            ]
+          },
+          {
+            "orden": 4,
+            "materia": [
+              {
+                "ID": 298,
+                "name": "ESTADISTICA I",
+                "pos": 2,
+                "cod_materia": "UMAT235",
+                "total_horas": 288,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 37,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 299,
+                "name": "FUNDAMENTOS DE ADMINISTRACION",
+                "pos": 4,
+                "cod_materia": "UGER103",
+                "total_horas": 288,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 300,
+                "name": "MICROBIOLOGIA",
+                "pos": 5,
+                "cod_materia": "UBIO271",
+                "total_horas": 288,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 301,
+                "name": "ECOLOGÍA APLICADA",
+                "pos": 7,
+                "cod_materia": "UCEC211",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 302,
+                "name": "ESCRITURA ACADÉMICA",
+                "pos": 8,
+                "cod_materia": "UCMU258",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 37,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 316,
+                "name": "DERECHO AMBIENTAL",
+                "pos": 1,
+                "cod_materia": "UAMB280",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": false,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orden": 3,
+        "semestre": [
+          {
+            "orden": 5,
+            "materia": [
+              {
+                "ID": 303,
+                "name": "DESARROLLO SOSTENIBLE DE CIUDADES",
+                "pos": 1,
+                "cod_materia": "UAMB308",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 305,
+                "name": "SISTEMAS DE INFORMACIÓN GEOGRÁFICA I",
+                "pos": 2,
+                "cod_materia": "USIG310",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 307,
+                "name": "ECONOMIA DE RECURSOS NATURALES",
+                "pos": 3,
+                "cod_materia": "UECO375",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 265
+                  }
+                ]
+              },
+              {
+                "ID": 309,
+                "name": "MANEJO DE FLORA I",
+                "pos": 4,
+                "cod_materia": "UAMB302",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 312,
+                "name": "METODOLOGIA DE LA INVESTIGACION",
+                "pos": 6,
+                "cod_materia": "USSC244",
+                "total_horas": 288,
+                "unidad_curricular": 156,
+                "obligatorio": true,
+                "campo_formacion": 37,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 320,
+                "name": "ETICA",
+                "pos": 5,
+                "cod_materia": "UFIL274",
+                "total_horas": 288,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 36,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              }
+            ]
+          },
+          {
+            "orden": 6,
+            "materia": [
+              {
+                "ID": 323,
+                "name": "GESTION DEL SUELO",
+                "pos": 1,
+                "cod_materia": "UAMB306",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 325,
+                "name": "ESTADISTICA MULTIVARIABLE",
+                "pos": 2,
+                "cod_materia": "UMAT305",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 327,
+                "name": "GESTION DEL AGUA",
+                "pos": 3,
+                "cod_materia": "UAMB351",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 329,
+                "name": "MANEJO DE FAUNA TERRESTRE",
+                "pos": 4,
+                "cod_materia": "UAMB303",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 204
+                  },
+                  {
+                    "ID": 301
+                  }
+                ]
+              },
+              {
+                "ID": 332,
+                "name": "GESTION DEL AIRE",
+                "pos": 6,
+                "cod_materia": "UAMB361",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 469,
+                "name": "RESTAURACIÓN ECOLÓGICA",
+                "pos": 5,
+                "cod_materia": "UAMB409",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orden": 4,
+        "semestre": [
+          {
+            "orden": 7,
+            "materia": [
+              {
+                "ID": 334,
+                "name": "EVALUACIÓN DE IMPACTO AMBIENTAL",
+                "pos": 1,
+                "cod_materia": "UAMB382",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 335,
+                "name": "GESTIÓN DE ENERGÍA",
+                "pos": 2,
+                "cod_materia": "UAMB371",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 339,
+                "name": "MANEJO DE FAUNA ACUATICA",
+                "pos": 3,
+                "cod_materia": "UAMB357",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 301
+                  }
+                ]
+              },
+              {
+                "ID": 340,
+                "name": "METOD. DE LA INVESTIGACION II",
+                "pos": 4,
+                "cod_materia": "USSC324",
+                "total_horas": 288,
+                "unidad_curricular": 156,
+                "obligatorio": true,
+                "campo_formacion": 37,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 343,
+                "name": "INTRODUCCIÓN A LAS TÉCNICAS DE CAMPO",
+                "pos": 5,
+                "cod_materia": "UAMB378",
+                "total_horas": 324,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.380000",
+                "materia_aprobada": false,
+                "dependants": []
+              }
+            ]
+          },
+          {
+            "orden": 8,
+            "materia": [
+              {
+                "ID": 345,
+                "name": "GESTION DEL RIESGO AMBIENTAL",
+                "pos": 1,
+                "cod_materia": "UAMB381",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 347,
+                "name": "GESTION DE DESECHOS Y RESIDUOS",
+                "pos": 8,
+                "cod_materia": "UAMB408",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 355,
+                "name": "MANEJO Y RESOLUCI¿N DE CONFLICTOS",
+                "pos": 3,
+                "cod_materia": "UGER385",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 316
+                  }
+                ]
+              },
+              {
+                "ID": 459,
+                "name": "MANEJO Y CONSERVACIÓN DE ÁREAS PROTEGIDAS",
+                "pos": 4,
+                "cod_materia": "UAMB401",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 477,
+                "name": "AUDITORIA AMBIENTAL",
+                "pos": 7,
+                "cod_materia": "UAMB450",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orden": 5,
+        "semestre": [
+          {
+            "orden": 9,
+            "materia": [
+              {
+                "ID": 410,
+                "name": "TITULACIÓN I",
+                "pos": 2,
+                "cod_materia": "UAMB400",
+                "total_horas": 288,
+                "unidad_curricular": 156,
+                "obligatorio": true,
+                "campo_formacion": 37,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 413,
+                "name": "POLÍTICAS AMBIENTALES",
+                "pos": 1,
+                "cod_materia": "UAMB455",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 422,
+                "name": "ORDENAMIENTO TERRITORIAL",
+                "pos": 3,
+                "cod_materia": "UAMB486",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 424,
+                "name": "TOXICOLOGÍA AMBIENTAL",
+                "pos": 4,
+                "cod_materia": "UAMB487",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 476,
+                "name": "EVOLUCIÓN Y CONSERVACIÓN DE RECURSOS NATURALES",
+                "pos": 5,
+                "cod_materia": "UAMB406",
+                "total_horas": 288,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 329
+                  },
+                  {
+                    "ID": 339
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "orden": 10,
+            "materia": [
+              {
+                "ID": 415,
+                "name": "TITULACION II",
+                "pos": 3,
+                "cod_materia": "UAMB491",
+                "total_horas": 576,
+                "unidad_curricular": 156,
+                "obligatorio": true,
+                "campo_formacion": 37,
+                "creditos_acad": "6.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 418,
+                "name": "TÉCNICAS PROPFESIONALES SUPERVISADAS",
+                "pos": 6,
+                "cod_materia": "UAMB390",
+                "total_horas": 900,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "9.380000",
+                "materia_aprobada": false,
+                "dependants": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Itinerario": {
+      "nombreItinerario": "ITINERARIO BASE (INGENIERÍA AMBIENTAL)"
+    }
+  }
+]

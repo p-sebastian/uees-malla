@@ -180,7 +180,7 @@ const routing = (link, targetKey, { year, semester, pos, id }) => {
     const isBeginning = pos === 1;
     const isFar = !isVertical && !isClose;
     
-    console.info(`${id}, isClose: ${isClose}, isVertical: ${isVertical}, pos: ${typeof pos}, tpos: ${typeof tPos}`);
+    // console.info(`${id}, isClose: ${isClose}, isVertical: ${isVertical}, pos: ${typeof pos}, tpos: ${typeof tPos}`);
 
     if (isVertical) { start = ['bottom']; end = ['top']; }
     if (isClose) { start = ['left', 'right']; end = ['left', 'right']; }
@@ -195,26 +195,30 @@ const routing = (link, targetKey, { year, semester, pos, id }) => {
     'endDirections': end
   });
 }
+// Sort in ascending order
+const asc = (a, b) => a.orden - b.orden;
 
 export const parseData = (data = []) => {
-  return data
-    .map(y => 
-      y.anio.map(s => 
-        s.semestre.map(m =>
-          m.materia.map(({ ID, name, pos, dependants, cod_materia, obligatorio, total_horas, creditos_acad, materia_aprobada, campo_formacion }) => {
-            return ({ 
-              id: ID, 
-              name: parseName(name), 
-              pos, 
-              dependants: dependants.map(d => d.ID),
-              cod_materia,
-              obligatorio: obligatorio === 'SI' ? true : false,
-              materia_aprobada: materia_aprobada === 'N' ? false : true,
-              total_horas: Number(total_horas),
-              creditos_acad,
-              campo_formacion
-            })
-          }))))
+  return data.map(y =>
+    y.anio.sort(asc).map(s =>
+      s.semestre.sort(asc).map(m =>
+        m.materia.map(({ ID, name, pos, dependants, cod_materia, obligatorio, total_horas, creditos_acad, materia_aprobada, campo_formacion }) => {
+          return ({ 
+            id: ID, 
+            name: parseName(name), 
+            pos, 
+            dependants: dependants.map(d => d.ID),
+            cod_materia,
+            obligatorio,
+            materia_aprobada,
+            total_horas,
+            creditos_acad,
+            campo_formacion
+          });
+        })
+      )
+    )
+  );
 }
 
 /**

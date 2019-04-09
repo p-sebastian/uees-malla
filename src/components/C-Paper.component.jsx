@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { createPaper, renderCells, parseData } from '../helpers/linking';
-import json from '../static/arte.json';
-import sistemas from '../static/sistemas.json';
-import teleco from '../static/telecomunicaciones.json';
+import json from '../static/requestWSmalla.json';
+import { malla, testAPI } from '../helpers/api';
+import _ from 'lodash';
 
 
 class CPaper extends Component {
+
+  async check() {
+    const idMalla = (_.isUndefined(window.idMalla) || _.isNull(window.idMalla)) ? 1 : window.idMalla;
+    try {
+      let { data } = await malla(idMalla);
+      console.info('response', data);
+      return data;
+    } catch (e) {
+      return json;
+    }
+  }
   componentDidMount() {
     this._renderPaper();
   }
@@ -21,11 +32,10 @@ class CPaper extends Component {
     );
   }
 
-  _renderPaper() {
+  async _renderPaper() {
     createPaper(this._ref);
-    const data = parseData(teleco)[0];
-    console.info(data);
-    console.info(sistemas);
+    let res = await this.check();
+    const data = parseData(res)[0];
     renderCells(data);
   }
 }

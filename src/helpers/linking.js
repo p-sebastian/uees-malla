@@ -1,5 +1,6 @@
 import * as joint from 'jointjs';
-import { COLORS } from './colors';
+import { getColors } from './colors';
+const COLORS = getColors();
 
 let graph = new joint.dia.Graph();
 let cells = {};
@@ -45,7 +46,7 @@ export const createPaper = ref => {
  */
 export const addCell = (position, id, course, color = {}) => {
   const { name, total_horas, obligatorio, cod_materia, campo_formacion } = course;
-  const { fill, text } = COLORS[campo_formacion];
+  const { fill, text } = COLORS.CF_COLOR[campo_formacion];
   const cell = new joint.shapes.org.Member({
     position,
     /**

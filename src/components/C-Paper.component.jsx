@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { createPaper, renderCells, parseData } from '../helpers/linking';
-import json from '../static/requestWSmalla.json';
-import { malla, testAPI } from '../helpers/api';
+import testMalla from '../static/update/malla.json';
+import testColor from '../static/update/color.json';
+import { save } from '../helpers/colors';
+import * as API from '../helpers/api';
 import _ from 'lodash';
 
 
@@ -11,11 +13,19 @@ class CPaper extends Component {
   async check() {
     const idMalla = (_.isUndefined(window.idMalla) || _.isNull(window.idMalla)) ? 1 : window.idMalla;
     try {
-      let { data } = await malla(idMalla);
+      let { data } = await API.malla(idMalla);
       console.info('response', data);
       return data;
     } catch (e) {
-      return json;
+      return testMalla;
+    }
+  }
+  async color() {
+    try {
+      let { data } = await API.color();
+      save(data);
+    } catch (e) {
+      save(testColor);
     }
   }
   componentDidMount() {
@@ -33,6 +43,8 @@ class CPaper extends Component {
   }
 
   async _renderPaper() {
+    await this.color();
+    
     createPaper(this._ref);
     let res = await this.check();
     const data = parseData(res)[0];

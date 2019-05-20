@@ -9,22 +9,22 @@ let courses = {};
 
 /**
  * creates the paper
- * @param {HTMLElement} ref 
+ * @param {HTMLElement} ref
+ * @param {{ width: number, height: number }} dimensions
  */
-export const createPaper = ref => {
+export const createPaper = (ref, { width, height }) => {
   // reset on init
   graph = new joint.dia.Graph();
   cells = {};
   sum = [0];
   courses = {};
 
-  const { height, width } = ref.getBoundingClientRect();
   new joint.dia.Paper({
     el: ref,
     model: graph,
     interactive: false,
-    height,
-    width,
+    height: height * 140, // cell (height + margin) * num of semesters
+    width: width * 270, // cell (width + margin) * max num of courses in a semester
     gridSize: 10, // pixels
     // drawGrid: 'mesh'
   });
@@ -200,10 +200,14 @@ const routing = (link, targetKey, { year, semester, pos, id }) => {
 const asc = (a, b) => a.orden - b.orden;
 
 export const parseData = (data = []) => {
-  return data.map(y =>
+  let maxMateria = 1;
+  let maxSemestre = 0;
+  const res = data.map(y =>
     y.anio.sort(asc).map(s =>
-      s.semestre.sort(asc).map(m =>
-        m.materia.map(({ ID, name, pos, dependants, cod_materia, obligatorio, total_horas, creditos_acad, materia_aprobada, campo_formacion }) => {
+      s.semestre.sort(asc).map(m => {
+        maxSemestre++;
+        return m.materia.map(({ ID, name, pos, dependants, cod_materia, obligatorio, total_horas, creditos_acad, materia_aprobada, campo_formacion }) => {
+          if (pos > maxMateria) { maxMateria = pos };
           return ({ 
             id: ID, 
             name: parseName(name), 
@@ -217,9 +221,14 @@ export const parseData = (data = []) => {
             campo_formacion
           });
         })
-      )
+      })
     )
-  );
+  )[0]; // first element since its an array of just one
+  return {
+    // for the paper dimensions
+    dimensions: { width: maxMateria, height: maxSemestre },
+    data: res
+  };
 }
 
 /**

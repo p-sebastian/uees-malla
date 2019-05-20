@@ -1,7 +1,7 @@
 import 'jointjs/dist/joint.min.css';
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { CTest, CPaper } from './components';
+import { CPaper } from './components';
 
 class App extends Component {
   render() {

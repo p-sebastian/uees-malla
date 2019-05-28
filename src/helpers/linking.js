@@ -6,7 +6,6 @@ let graph = new joint.dia.Graph();
 let cells = {};
 let sum = [0];
 let courses = {};
-const positions = [];
 
 /**
  * creates the paper
@@ -81,7 +80,7 @@ export const addCell = (position, id, course, color = {}) => {
  * 
  * @param {jsonData} data 
  */
-export const renderCells = (data = [], done) => {
+export const renderCells = (data = []) => {
   // must be the same as the cell element
   const width = 200;
   // bottom, right margin
@@ -111,8 +110,6 @@ export const renderCells = (data = [], done) => {
     })
     sum[0] += year.length;
   });
-  // callback for passing each cell position
-  done(positions);
   ordering();
 }
 

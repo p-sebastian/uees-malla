@@ -23,8 +23,8 @@ export const createPaper = (ref, { width, height }) => {
     el: ref,
     model: graph,
     interactive: false,
-    height: height * 140, // cell (height + margin) * num of semesters
-    width: width * 270, // cell (width + margin) * max num of courses in a semester
+    height: height * 140 - 70, // cell (height + margin) * num of semesters - last margin
+    width: width * 270 - 70, // cell (width + margin) * max num of courses in a semester - last margin
     gridSize: 10, // pixels
     // drawGrid: 'mesh'
   });

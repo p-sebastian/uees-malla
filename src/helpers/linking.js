@@ -6,6 +6,7 @@ let graph = new joint.dia.Graph();
 let cells = {};
 let sum = [0];
 let courses = {};
+const positions = [];
 
 /**
  * creates the paper
@@ -32,7 +33,7 @@ export const createPaper = (ref, { width, height }) => {
 
 /**
  * @typedef {({ id: number, year: number, semester: number, pos: number })} dependants
- * @typedef {({ id: number, name: string, pos: number, cod_materia: string, obligatorio: boolean, total_horas: number, creditos_acad: string, materia_aprobada: boolean, campo_formacion: number, dependants: [dependants] })} course
+ * @typedef {({ id: number, name: string, pos: number, cod_materia: string, obligatorio: boolean, total_horas: number, creditos_acad: string, materia_aprobada: boolean, campo_formacion: number, unidad_curricular: number, dependants: [dependants] })} course
  * @typedef {([[[course]]])} jsonData
  */
 
@@ -45,7 +46,7 @@ export const createPaper = (ref, { width, height }) => {
  * @param {{ text: string, cell: string }} color hex string color for the 2 elements
  */
 export const addCell = (position, id, course, color = {}) => {
-  const { name, total_horas, obligatorio, cod_materia, campo_formacion } = course;
+  const { name, total_horas, obligatorio, cod_materia, campo_formacion, unidad_curricular } = course;
   const { fill, text } = COLORS.CF_COLOR[campo_formacion];
   const cell = new joint.shapes.org.Member({
     position,
@@ -60,8 +61,19 @@ export const addCell = (position, id, course, color = {}) => {
         '.name': { text: name, fill: text, 'font-size': 8, 'font-family': 'Arial', 'letter-spacing': 0 }
     }
   });
+  const x = position.x - 45;
+  const y = position.y - 35
+  const background = new joint.shapes.standard.Rectangle({ 
+    position: { x, y },
+    size: { width: 270, height: 140 }, // + right margin of 70 + 20px, and bottom of 70px
+    attrs: { 
+      body: { fill: COLORS.UC_COLOR[unidad_curricular].fill, stroke: 'none' } 
+    }
+  });
   // save cells for linking
   cells[id] = cell;
+  // positions.push({ ...cell.attributes.position, ucId: unidad_curricular });
+  graph.addCell(background);
   graph.addCell(cell);
 }
 
@@ -69,7 +81,7 @@ export const addCell = (position, id, course, color = {}) => {
  * 
  * @param {jsonData} data 
  */
-export const renderCells = (data = []) => {
+export const renderCells = (data = [], done) => {
   // must be the same as the cell element
   const width = 200;
   // bottom, right margin
@@ -99,6 +111,8 @@ export const renderCells = (data = []) => {
     })
     sum[0] += year.length;
   });
+  // callback for passing each cell position
+  done(positions);
   ordering();
 }
 
@@ -193,7 +207,8 @@ const routing = (link, targetKey, { year, semester, pos, id }) => {
   link.router('manhattan', {
     'step': 10,
     'startDirections': start,
-    'endDirections': end
+    'endDirections': end,
+    'excludeTypes': ['standard.Rectangle']
   });
 }
 // Sort in ascending order
@@ -206,7 +221,7 @@ export const parseData = (data = []) => {
     y.anio.sort(asc).map(s =>
       s.semestre.sort(asc).map(m => {
         maxSemestre++;
-        return m.materia.map(({ ID, name, pos, dependants, cod_materia, obligatorio, total_horas, creditos_acad, materia_aprobada, campo_formacion }) => {
+        return m.materia.map(({ ID, name, pos, dependants, cod_materia, obligatorio, total_horas, creditos_acad, materia_aprobada, campo_formacion, unidad_curricular }) => {
           if (pos > maxMateria) { maxMateria = pos };
           return ({ 
             id: ID, 
@@ -218,7 +233,8 @@ export const parseData = (data = []) => {
             materia_aprobada,
             total_horas,
             creditos_acad,
-            campo_formacion
+            campo_formacion,
+            unidad_curricular
           });
         })
       })

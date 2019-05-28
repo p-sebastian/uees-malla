@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { createPaper, renderCells, parseData } from '../helpers/linking';
 import testMalla from '../static/requestWSmalla.json';
-import testColor from '../static/update/color.json';
-import { save } from '../helpers/colors';
+import testColor from '../static/color.json';
+import { save, getColors } from '../helpers/colors';
 import * as API from '../helpers/api';
 import _ from 'lodash';
 
 
 class CPaper extends Component {
+  state = { positions: [] };
 
   async check() {
     const idMalla = (_.isUndefined(window.idMalla) || _.isNull(window.idMalla)) ? 1 : window.idMalla;
@@ -34,10 +35,12 @@ class CPaper extends Component {
 
   render() {
     const { paper, container } = this.props.classes;
+    console.info('rendered');
 
     return (
-      <div className={container}>
+      <div id="home" className={container}>
         <div className={paper} ref={ref => this._ref = ref}></div>
+        {this.renderBackground()}
       </div>
     );
   }
@@ -46,11 +49,26 @@ class CPaper extends Component {
     await this.color();
     let res = await this.check();
     const { data, dimensions } = parseData(res);
-    
+
     createPaper(this._ref, dimensions);
-    renderCells(data);
+    renderCells(data, positions => this.setState({ positions }));
+  }
+  renderBackground() {
+    const { positions } = this.state;
+    console.info('r', JSON.stringify(positions));
+    const { UC_COLOR } = getColors();
+    return positions.map(({ x, y, ucId }) => (
+      <div style={{ 
+        left: `${x}px`, top: `${y}px`, backgroundColor: UC_COLOR[ucId].fill,
+        position: 'absolute',
+        zIndex: 1,
+        width: '270px',
+        height: '100px'
+      }}></div>
+    ));
   }
 }
+
 
 const styles = {
   paper: {

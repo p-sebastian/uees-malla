@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { createPaper, renderCells, parseData } from '../helpers/linking';
-import testMalla from '../static/update/malla_teleco_new.json';
-import testColor from '../static/color.json';
-import { save, getColors } from '../helpers/colors';
+import { save } from '../helpers/colors';
 import * as API from '../helpers/api';
 import _ from 'lodash';
 import { Card, Typography, CardContent, Chip } from '@material-ui/core';
@@ -13,55 +11,82 @@ class CPaper extends Component {
 
   async check() {
     const idMalla = (_.isUndefined(window.idMalla) || _.isNull(window.idMalla)) ? 1 : window.idMalla;
-    try {
-      let { data } = await API.malla(idMalla);
-      console.info('response', data);
-      return data;
-    } catch (e) {
-      return testMalla;
-    }
+    return await API.malla(idMalla);
   }
   async color(width) {
-    try {
-      let { data } = await API.color();
-      const colors = save(data);
-      this.setState({ ...colors, width });
-    } catch (e) {
-      const colors = save(testColor);
-      this.setState({ ...colors, width });
-    }
+    let data = await API.color();
+    const colors = save(data);
+    this.setState({ ...colors, width });
   }
   componentDidMount() {
     this._renderPaper();
   }
 
   render() {
-    const { container, chipContiner } = this.props.classes;
-    const { width } = this.state;
+    const { container, chipContiner, title, subtitle, header } = this.props.classes;
+    const { width, cfColor, ucColor } = this.state;
 
     return (
       <div>
+        <Card style={{ width, backgroundColor: '#6D1B33' }} className={container}>
+          <CardContent>
+            <div>
+              <Typography 
+                gutterBottom 
+                variant="h2" 
+                component="h2"
+                className={title}
+              >
+                Telecomunicaciones
+              </Typography>
+              <Typography 
+                gutterBottom 
+                variant="h3" 
+                component="h3"
+                className={subtitle}
+              >
+                Malla Curricular
+              </Typography>
+            </div>
+          </CardContent>
+        </Card>
         <Card style={{ width }} className={container}>
           <div ref={ref => this._ref = ref}></div>
         </Card>
         <Card style={{ width }} className={container}>
           <CardContent>
             <div className={chipContiner}>
-
               <Typography 
                 gutterBottom 
                 variant="h4" 
                 component="h2"
-                style={{ textTransform: 'uppercase' }} 
+                className={header}
               >
                 Campo Formacion
               </Typography>
             </div>
             <div style={{ width }} className={chipContiner}>
-              {this.renderCFChips()}
+              {this.renderChips(cfColor)}
             </div>
           </CardContent>
+        </Card>
 
+        <Card style={{ width }} className={container}>
+          <CardContent>
+            <div className={chipContiner}>
+              <Typography 
+                gutterBottom 
+                variant="h4" 
+                component="h2"
+                className={header}
+              >
+                Unidad Curricular
+              </Typography>
+            </div>
+            <div style={{ width }} className={chipContiner}>
+              {this.renderChips(ucColor)}
+            </div>
+          </CardContent>
         </Card>
       </div>
     );
@@ -75,18 +100,20 @@ class CPaper extends Component {
     createPaper(this._ref, dimensions);
     renderCells(data);
   }
-  renderCFChips() {
-    const { cfColor } = this.state;
-    return cfColor.map(({ name, color, id }) => (
+  renderChips(colors = []) {
+    return colors.map(({ name, color, id }) => (
       <Chip
         key={id}
         label={name}
+        variant="outlined"
         style={{
           backgroundColor: color,
-          margin: 5
+          margin: 5,
+          borderWidth: 1.5,
+          borderColor: 'black'
         }}
       />
-    ))
+    )) 
   }
 }
 
@@ -99,7 +126,24 @@ const styles = {
   chipContiner: {
     display: 'flex',
     justifyContent: 'center',
-    flexWrap: 'wrap',
+    flexWrap: 'wrap'
+  },
+  header: {
+    fontWeight: 500,
+    textTransform: 'uppercase'
+  },
+  title: {
+    display: 'flex',
+    letterSpacing: 2,
+    fontWeight: 500,
+    textTransform: 'uppercase',
+    color: 'white'
+  },
+  subtitle: {
+    letterSpacing: 2,
+    color: 'white',
+    textTransform: 'uppercase',
+    fontWeight: 300
   }
 };
 

@@ -214,8 +214,8 @@ const asc = (a, b) => a.orden - b.orden;
 export const parseData = (data = []) => {
   let maxMateria = 1;
   let maxSemestre = 0;
-  const res = data.map(y =>
-    y.anio.sort(asc).map(s =>
+  const res = data[0].anio
+    .sort(asc).map(s =>
       s.semestre.sort(asc).map(m => {
         maxSemestre++;
         return m.materia.map(({ ID, name, pos, dependants, cod_materia, obligatorio, total_horas, creditos_acad, materia_aprobada, campo_formacion, unidad_curricular }) => {
@@ -235,12 +235,12 @@ export const parseData = (data = []) => {
           });
         })
       })
-    )
-  )[0]; // first element since its an array of just one
+    );
   return {
     // for the paper dimensions
     dimensions: { width: maxMateria, height: maxSemestre },
-    data: res
+    data: res,
+    header: data[0].informacion_cabecera
   };
 }
 

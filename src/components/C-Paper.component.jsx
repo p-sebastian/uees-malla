@@ -7,7 +7,7 @@ import _ from 'lodash';
 import { Card, Typography, CardContent, Chip } from '@material-ui/core';
 
 class CPaper extends Component {
-  state = { cfColor: [], ucColor: [], width: 100 };
+  state = { cfColor: [], ucColor: [], width: 100, header: {} };
 
   async check() {
     const idMalla = (_.isUndefined(window.idMalla) || _.isNull(window.idMalla)) ? 1 : window.idMalla;
@@ -24,7 +24,7 @@ class CPaper extends Component {
 
   render() {
     const { container, chipContiner, title, subtitle, header } = this.props.classes;
-    const { width, cfColor, ucColor } = this.state;
+    const { width, cfColor, ucColor, header: { Carrera } } = this.state;
 
     return (
       <div>
@@ -37,7 +37,7 @@ class CPaper extends Component {
                 component="h2"
                 className={title}
               >
-                Telecomunicaciones
+                {Carrera}
               </Typography>
               <Typography 
                 gutterBottom 
@@ -94,9 +94,10 @@ class CPaper extends Component {
 
   async _renderPaper() {
     let res = await this.check();
-    const { data, dimensions } = parseData(res);
+    const { data, dimensions, header } = parseData(res);
     await this.color(dimensions.width * 270 - 70);
 
+    this.setState({ header });
     createPaper(this._ref, dimensions);
     renderCells(data);
   }

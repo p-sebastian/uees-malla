@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { createPaper, renderCells, parseData } from '../helpers/linking';
+import { createPaper, renderCells, parseData, isUndefined } from '../helpers/linking';
 import { save } from '../helpers/colors';
 import * as API from '../helpers/api';
-import _ from 'lodash';
 import { Card, Typography, CardContent, Chip } from '@material-ui/core';
 
 class CPaper extends Component {
   state = { cfColor: [], ucColor: [], width: 100, header: {} };
 
   async check() {
-    const idMalla = (_.isUndefined(window.idMalla) || _.isNull(window.idMalla)) ? 1 : window.idMalla;
-    return await API.malla(idMalla);
+    const idMalla = isUndefined('idMalla');
+    const idAlumno = isUndefined('idAlumno');
+    return await idAlumno === null ? API.malla(idMalla) : API.student(idMalla, idAlumno);
   }
   async color(width) {
-    let data = await API.color();
+    let data = await API.color(isUndefined('idMalla'));
     const colors = save(data);
     this.setState({ ...colors, width });
   }

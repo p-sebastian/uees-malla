@@ -30,4 +30,25 @@ export const save = (res) => {
   return { cfColor: s_cf, ucColor: s_uc };
 }
 
-export const getColors = () => ({ CF_COLOR, UC_COLOR });
+const CELL_COLOR = {
+  aprobada: {
+    stroke: '#2E7D32',
+    textColor: '#2E7D32',
+    background: 'white',
+    strokeWidth: 5
+  },
+  subscribed: {
+    stroke: '#01579B',
+    textColor: '#01579B',
+    background: 'white',
+    strokeWidth: 5
+  },
+  reprobada: {
+    stroke: '#D50000',
+    textColor: '#D50000',
+    background: 'white',
+    strokeWidth: 5
+  }
+}
+
+export const getColors = () => ({ CF_COLOR, UC_COLOR, CELL_COLOR });

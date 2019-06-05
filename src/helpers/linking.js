@@ -1,5 +1,6 @@
 import * as joint from 'jointjs';
 import { getColors } from './colors';
+import _ from 'lodash';
 const COLORS = getColors();
 
 let graph = new joint.dia.Graph();
@@ -32,7 +33,7 @@ export const createPaper = (ref, { width, height }) => {
 
 /**
  * @typedef {({ id: number, year: number, semester: number, pos: number })} dependants
- * @typedef {({ id: number, name: string, pos: number, cod_materia: string, obligatorio: boolean, total_horas: number, creditos_acad: string, materia_aprobada: boolean, campo_formacion: number, unidad_curricular: number, dependants: [dependants] })} course
+ * @typedef {({ id: number, name: string, pos: number, cod_materia: string, obligatorio: boolean, total_horas: number, creditos_acad: string, materia_aprobada: boolean, campo_formacion: number, unidad_curricular: number, cursando: boolean, materia_reprobada: boolean, dependants: [dependants] })} course
  * @typedef {([[[course]]])} jsonData
  */
 
@@ -40,26 +41,15 @@ export const createPaper = (ref, { width, height }) => {
  * create a cell and add it to the graph
  * cells are 180px in width and 70px in height, each
  * @param {{ x: number, y: number }} position of cell
- * @param {string} id of cell
+ * @param {string} id of cell NOT THE SAME AS course id
  * @param {course} course
  * @param {{ text: string, cell: string }} color hex string color for the 2 elements
  */
 export const addCell = (position, id, course, color = {}) => {
-  const { name, total_horas, obligatorio, cod_materia, campo_formacion, unidad_curricular } = course;
+  const { name, total_horas, obligatorio, cod_materia, campo_formacion, unidad_curricular, cursando, materia_aprobada } = course;
   const { fill, text } = COLORS.CF_COLOR[campo_formacion];
-  const cell = new joint.shapes.org.Member({
-    position,
-    /**
-     * This is also styling of the cell element
-     */
-    id: id,
-    attrs: {
-        '.card': { fill },
-          // image: { 'xlink:href': 'images/'+ image, opacity: 0.7 },
-        '.rank': { text: `${cod_materia} (${total_horas})`, fill: text, 'font-family': 'Arial', 'letter-spacing': 0, 'text-decoration': 'none' },
-        '.name': { text: name, fill: text, 'font-size': 8, 'font-family': 'Arial', 'letter-spacing': 0 }
-    }
-  });
+  const cell = createCell(id, position, cellStyling(course));
+  
   const x = position.x - 45;
   const y = position.y - 35
   const background = new joint.shapes.standard.Rectangle({ 
@@ -75,6 +65,51 @@ export const addCell = (position, id, course, color = {}) => {
   graph.addCell(background);
   graph.addCell(cell);
 }
+
+/**
+ * @param {course} course 
+ */
+const cellStyling = ({ name, total_horas, obligatorio, cod_materia, campo_formacion, unidad_curricular, cursando, materia_aprobada, materia_reprobada}) => {
+  const { fill, text } = COLORS.CF_COLOR[campo_formacion];
+  const { aprobada, reprobada, subscribed } = COLORS.CELL_COLOR;
+  let background = fill;
+  let textColor = text;
+  let stroke = 'black';
+  let strokeWidth = 2;
+  if (materia_aprobada) {
+    textColor = aprobada.textColor
+    background = aprobada.background
+    stroke = aprobada.stroke;
+    strokeWidth = aprobada.strokeWidth;
+  }
+  else if (cursando) {
+    textColor = subscribed.textColor
+    background = subscribed.background
+    stroke = subscribed.stroke;
+    strokeWidth = subscribed.strokeWidth;
+  }
+  else if (materia_reprobada) {
+    textColor = reprobada.textColor
+    background = reprobada.background
+    stroke = reprobada.stroke;
+    strokeWidth = reprobada.strokeWidth;
+  }
+  return { title: `${cod_materia} (${total_horas})`, subtitle: name, background, textColor, styling: { stroke, strokeWidth } };
+}
+const createCell = (id, position, { title, subtitle, background, textColor, styling }) =>
+  new joint.shapes.org.Member({
+    position,
+    /**
+     * This is also styling of the cell element
+     */
+    id: id,
+    attrs: {
+        '.card': { ...styling, fill: background },
+          // image: { 'xlink:href': 'images/'+ image, opacity: 0.7 },
+        '.rank': { text: title, fill: textColor, 'font-family': 'Arial', 'letter-spacing': 0, 'text-decoration': 'none' },
+        '.name': { text: subtitle, fill: textColor, 'font-size': 8, 'font-family': 'Arial', 'letter-spacing': 0 }
+    }
+  });
 
 /**
  * 
@@ -218,7 +253,10 @@ export const parseData = (data = []) => {
     .sort(asc).map(s =>
       s.semestre.sort(asc).map(m => {
         maxSemestre++;
-        return m.materia.map(({ ID, name, pos, dependants, cod_materia, obligatorio, total_horas, creditos_acad, materia_aprobada, campo_formacion, unidad_curricular }) => {
+        return m.materia.map(({
+           ID, name, pos, dependants, cod_materia, obligatorio, total_horas, creditos_acad,
+           materia_aprobada, cursando, campo_formacion, unidad_curricular, materia_reprobada
+         }) => {
           if (pos > maxMateria) { maxMateria = pos };
           return ({ 
             id: ID, 
@@ -231,7 +269,9 @@ export const parseData = (data = []) => {
             total_horas,
             creditos_acad,
             campo_formacion,
-            unidad_curricular
+            unidad_curricular,
+            cursando,
+            materia_reprobada
           });
         })
       })
@@ -256,3 +296,8 @@ const parseName = name => {
   }
   return name;
 }
+
+/**
+ * @param {'idMalla' | 'idAlumno'} name 
+ */
+export const isUndefined = name => _.isUndefined(window[name]) || _.isNull(window[name]) ? null : window[name];

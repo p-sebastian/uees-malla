@@ -1,0 +1,1018 @@
+[
+  {
+    "anio": [
+      {
+        "orden": 1,
+        "semestre": [
+          {
+            "orden": 1,
+            "materia": [
+              {
+                "ID": 110,
+                "name": "DIBUJO DIGITAL 2D",
+                "pos": 1,
+                "cod_materia": "UDDG-N233",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 111,
+                "name": "GEOMETRIA Y TRIGONOMETRIA",
+                "pos": 2,
+                "cod_materia": "UMAT108",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 112,
+                "name": "QUIMICA APLICADA A LA INGENIERIA CIVIL",
+                "pos": 3,
+                "cod_materia": "UQUI202",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 113,
+                "name": "CALCULO PARA INGENIERIA CIVIL I",
+                "pos": 5,
+                "cod_materia": "UMAT133",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 114,
+                "name": "FISICA APLICADA A LA INGENIERIA CIVIL",
+                "pos": 6,
+                "cod_materia": "UFIS128",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 115,
+                "name": "LENGUAJE ESPAÑOL",
+                "pos": 8,
+                "cod_materia": "UCMU148",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 35,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              }
+            ]
+          },
+          {
+            "orden": 2,
+            "materia": [
+              {
+                "ID": 116,
+                "name": "GEOLOGIA",
+                "pos": 3,
+                "cod_materia": "UICV243",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 112
+                  }
+                ]
+              },
+              {
+                "ID": 117,
+                "name": "CALCULO PARA INGENIERIA CIVIL II",
+                "pos": 5,
+                "cod_materia": "UMAT164",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 113
+                  }
+                ]
+              },
+              {
+                "ID": 118,
+                "name": "ESTATICA",
+                "pos": 6,
+                "cod_materia": "UARQ213",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 114
+                  }
+                ]
+              },
+              {
+                "ID": 119,
+                "name": "LABORATORIO-FISICA APLICADA A LA INGENIERIA CIVIL",
+                "pos": 7,
+                "cod_materia": "UFIS129",
+                "veces_repetida": 0,
+                "total_horas": 480,
+                "cursando": false,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "5.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 114
+                  }
+                ]
+              },
+              {
+                "ID": 120,
+                "name": "TECNOLOGIAS DE LA INFORMACION",
+                "pos": 8,
+                "cod_materia": "UCOM000",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 37,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orden": 2,
+        "semestre": [
+          {
+            "orden": 3,
+            "materia": [
+              {
+                "ID": 121,
+                "name": "TOPOGRAFIA",
+                "pos": 2,
+                "cod_materia": "UICV105",
+                "veces_repetida": 0,
+                "total_horas": 480,
+                "cursando": false,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "5.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 110
+                  },
+                  {
+                    "ID": 111
+                  }
+                ]
+              },
+              {
+                "ID": 123,
+                "name": "METODOLOGIA DE LA INVESTIGACION",
+                "pos": 4,
+                "cod_materia": "USSC244",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 37,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 125,
+                "name": "DINAMICA",
+                "pos": 6,
+                "cod_materia": "UICV201",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 118
+                  }
+                ]
+              },
+              {
+                "ID": 126,
+                "name": "ESTADISTICA I",
+                "pos": 7,
+                "cod_materia": "UMAT235",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 37,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 127,
+                "name": "ECOLOGIA",
+                "pos": 8,
+                "cod_materia": "UCEC171",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 36,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              }
+            ]
+          },
+          {
+            "orden": 4,
+            "materia": [
+              {
+                "ID": 132,
+                "name": "SISTEMA DE INFORMACION GEOGRAFICA",
+                "pos": 2,
+                "cod_materia": "UICV255",
+                "veces_repetida": 0,
+                "total_horas": 480,
+                "cursando": false,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "5.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 121
+                  }
+                ]
+              },
+              {
+                "ID": 134,
+                "name": "MODELOS MATEMATICOS",
+                "pos": 5,
+                "cod_materia": "UICV210",
+                "veces_repetida": 0,
+                "total_horas": 480,
+                "cursando": false,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "5.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 120
+                  },
+                  {
+                    "ID": 117
+                  }
+                ]
+              },
+              {
+                "ID": 135,
+                "name": "RESISTENCIA DE MATERIALES",
+                "pos": 6,
+                "cod_materia": "UARQ216",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 118
+                  }
+                ]
+              },
+              {
+                "ID": 137,
+                "name": "MECANICA DE FLUIDOS I",
+                "pos": 7,
+                "cod_materia": "UICV262",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 34,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 119
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orden": 3,
+        "semestre": [
+          {
+            "orden": 5,
+            "materia": [
+              {
+                "ID": 140,
+                "name": "ETICA",
+                "pos": 1,
+                "cod_materia": "UFIL274",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 154,
+                "obligatorio": true,
+                "campo_formacion": 36,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": []
+              },
+              {
+                "ID": 142,
+                "name": "GEOTECNIA",
+                "pos": 3,
+                "cod_materia": "UICV206",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 116
+                  }
+                ]
+              },
+              {
+                "ID": 145,
+                "name": "TECNOLOGIA DE HORMIGON",
+                "pos": 5,
+                "cod_materia": "UICV211",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 135
+                  }
+                ]
+              },
+              {
+                "ID": 146,
+                "name": "ANALISIS ESTRUCTURAL I",
+                "pos": 6,
+                "cod_materia": "UICE351",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 134
+                  },
+                  {
+                    "ID": 135
+                  }
+                ]
+              },
+              {
+                "ID": 152,
+                "name": "INGENIERIA SANITARIA",
+                "pos": 7,
+                "cod_materia": "UICS351",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 137
+                  }
+                ]
+              },
+              {
+                "ID": 156,
+                "name": "METODOLOGIA CONSTRUCTIVA",
+                "pos": 8,
+                "cod_materia": "UICV251",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 142
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "orden": 6,
+            "materia": [
+              {
+                "ID": 158,
+                "name": "LABORATORIO DE MECANICA DE SUELOS",
+                "pos": 3,
+                "cod_materia": "UICV207",
+                "veces_repetida": 0,
+                "total_horas": 480,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "5.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 142
+                  }
+                ]
+              },
+              {
+                "ID": 162,
+                "name": "LABORATORIO DE MATERIALES ESTRUCTURALES",
+                "pos": 5,
+                "cod_materia": "UICV214",
+                "veces_repetida": 0,
+                "total_horas": 480,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "5.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 145
+                  }
+                ]
+              },
+              {
+                "ID": 166,
+                "name": "ANALISIS ESTRUCTURAL II",
+                "pos": 6,
+                "cod_materia": "UICE361",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 146
+                  }
+                ]
+              },
+              {
+                "ID": 171,
+                "name": "OBRAS DE INFRAESTRUCTURA URBANA",
+                "pos": 7,
+                "cod_materia": "UICS345",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 152
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orden": 4,
+        "semestre": [
+          {
+            "orden": 7,
+            "materia": [
+              {
+                "ID": 179,
+                "name": "SISMICA Y SISMOLOGIA",
+                "pos": 1,
+                "cod_materia": "UICE450",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 158
+                  },
+                  {
+                    "ID": 162
+                  },
+                  {
+                    "ID": 166
+                  }
+                ]
+              },
+              {
+                "ID": 182,
+                "name": "INGENIERIA DE TRAFICO",
+                "pos": 2,
+                "cod_materia": "UICT392",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 126
+                  }
+                ]
+              },
+              {
+                "ID": 183,
+                "name": "CIMENTACIONES",
+                "pos": 3,
+                "cod_materia": "UICE423",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 158
+                  }
+                ]
+              },
+              {
+                "ID": 188,
+                "name": "DISE¿O ESTRUCTURAS DE HORMIGON",
+                "pos": 5,
+                "cod_materia": "UICE427",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 146
+                  },
+                  {
+                    "ID": 162
+                  }
+                ]
+              },
+              {
+                "ID": 192,
+                "name": "OBRAS HIDRAULICAS",
+                "pos": 6,
+                "cod_materia": "UICE470",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 146
+                  },
+                  {
+                    "ID": 171
+                  }
+                ]
+              },
+              {
+                "ID": 195,
+                "name": "DISE¿O ESTRUCTURAS METALICAS",
+                "pos": 7,
+                "cod_materia": "UICE429",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 146
+                  },
+                  {
+                    "ID": 162
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "orden": 8,
+            "materia": [
+              {
+                "ID": 203,
+                "name": "DISE¿O DE PAVIMENTOS",
+                "pos": 2,
+                "cod_materia": "UICT408",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 162
+                  },
+                  {
+                    "ID": 182
+                  }
+                ]
+              },
+              {
+                "ID": 224,
+                "name": "METODOS CUALITATIVOS Y CUANTITATIVOS DE INVESTIGACION",
+                "pos": 4,
+                "cod_materia": "USSC329",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 37,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 123
+                  }
+                ]
+              },
+              {
+                "ID": 230,
+                "name": "HORMIGON PRE-POST TENSADO",
+                "pos": 5,
+                "cod_materia": "UICE452",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 188
+                  }
+                ]
+              },
+              {
+                "ID": 237,
+                "name": "PUENTES",
+                "pos": 6,
+                "cod_materia": "UICE421",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 166
+                  },
+                  {
+                    "ID": 183
+                  },
+                  {
+                    "ID": 188
+                  },
+                  {
+                    "ID": 195
+                  }
+                ]
+              },
+              {
+                "ID": 247,
+                "name": "ESTRUCTURAS COSTERAS",
+                "pos": 7,
+                "cod_materia": "UICP421",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 166
+                  },
+                  {
+                    "ID": 183
+                  },
+                  {
+                    "ID": 188
+                  }
+                ]
+              },
+              {
+                "ID": 249,
+                "name": "INGENIERIA DE COSTOS",
+                "pos": 8,
+                "cod_materia": "UAQC-N474",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 156
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orden": 5,
+        "semestre": [
+          {
+            "orden": 9,
+            "materia": [
+              {
+                "ID": 254,
+                "name": "ESCRITURA ACADÉMICA",
+                "pos": 1,
+                "cod_materia": "UCMU258",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 37,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 115
+                  }
+                ]
+              },
+              {
+                "ID": 264,
+                "name": "TITULACION I",
+                "pos": 4,
+                "cod_materia": "UICV551",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 156,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 237
+                  }
+                ]
+              },
+              {
+                "ID": 268,
+                "name": "DISE¿O ESTRUCTURAS MADERA",
+                "pos": 5,
+                "cod_materia": "UICE439",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 146
+                  }
+                ]
+              },
+              {
+                "ID": 273,
+                "name": "GESTION DE PROYECTOS DE INFRAESTRUCTURA",
+                "pos": 7,
+                "cod_materia": "UAQD460",
+                "veces_repetida": 0,
+                "total_horas": 480,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "5.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 249
+                  }
+                ]
+              },
+              {
+                "ID": 277,
+                "name": "GESTION DE RECURSOS",
+                "pos": 8,
+                "cod_materia": "UAQC-N484",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 249
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "orden": 10,
+            "materia": [
+              {
+                "ID": 279,
+                "name": "CONTEXTO LEGAL",
+                "pos": 1,
+                "cod_materia": "UAQD431",
+                "veces_repetida": 0,
+                "total_horas": 288,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "3.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 277
+                  }
+                ]
+              },
+              {
+                "ID": 284,
+                "name": "VISITAS TECNICAS",
+                "pos": 2,
+                "cod_materia": "UICV510",
+                "veces_repetida": 0,
+                "total_horas": 480,
+                "cursando": false,
+                "unidad_curricular": 155,
+                "obligatorio": true,
+                "campo_formacion": 38,
+                "creditos_acad": "5.000000",
+                "materia_aprobada": false,
+                "dependants": [
+                  {
+                    "ID": 277
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "informacion_cabecera": {
+      "Sub-unidad academica": "ESCUELA DE INGENIERIA CIVIL",
+      "Carrera": "INGENIERÍA CIVIL",
+      "codigo_alumno": "2016170009",
+      "Vigencia": "Desde 02-AGO-17 en adelante",
+      "nombre_alumno": "GONZALO ZAMBRANO ANDRES HERNANDEZ",
+      "Facultad": "FACULTAD DE ARQUITECTURA E INGENIERIA CIVIL"
+    }
+  }
+]

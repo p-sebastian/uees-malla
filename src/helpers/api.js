@@ -18,10 +18,10 @@ const getCall = (...args) => axios.get(...args);
 const URL = 'http://localhost:8099';
 
 export const malla = idMalla => 
-  exec(FAKE_MALLA)(`${URL}/WebServices/MallaJSON/GeneracionJsonMalla/BuscaMalla`, { idMalla });
+  exec(FAKE_MALLA)(`${URL}/WebServices/MallaJSON/GeneracionJsonMalla/BuscaMalla`, { params: { idMalla } });
 
 export const color = idMalla =>
-  exec(FAKE_COLOR)(`${URL}/WebServices/ColoresMallaJSON/GeneracionJsonColorMalla/GetColor`, { idMalla });
+  exec(FAKE_COLOR)(`${URL}/WebServices/ColoresMallaJSON/GeneracionJsonColorMalla/GetColor`, { params: { idMalla }});
 
 export const student = (idMalla, idAlumno) =>
   exec(FAKE_ALUMNO)(`${URL}/WebServices/MallaJSONReprobadas/GeneracionJsonMalla/BuscaMalla`, { params: { idMalla, idAlumno }});

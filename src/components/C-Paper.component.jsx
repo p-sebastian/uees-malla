@@ -11,6 +11,7 @@ class CPaper extends Component {
   async check() {
     const idMalla = isUndefined('idMalla');
     const idAlumno = isUndefined('idAlumno');
+    console.info('ids', idMalla, idAlumno)
     return await idAlumno === null ? API.malla(idMalla) : API.student(idMalla, idAlumno);
   }
   async color(width) {

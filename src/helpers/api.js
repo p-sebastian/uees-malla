@@ -1,6 +1,6 @@
 import axios from 'axios';
 import FAKE_MALLA from '../static/update/malla_teleco_new.json';
-import FAKE_COLOR from '../static/color.json';
+import FAKE_COLOR from '../static/update/color.json';
 import FAKE_ALUMNO from '../static/update/student.json';
 
 const exec = fallback => async function(url, params = {}) {

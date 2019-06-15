@@ -5,7 +5,9 @@ let CF_COLOR = {};
 /**
  * key = Unidad curricular
  */
-let UC_COLOR = {};
+let UC_COLOR = {
+  empty: 'white'
+};
 
 /**
  * 

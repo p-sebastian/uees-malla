@@ -7,6 +7,7 @@ let graph = new joint.dia.Graph();
 let cells = {};
 let sum = [0];
 let courses = {};
+let maxCourses = 1;
 
 /**
  * creates the paper
@@ -14,6 +15,7 @@ let courses = {};
  * @param {{ width: number, height: number }} dimensions
  */
 export const createPaper = (ref, { width, height }) => {
+  maxCourses = width;
   // reset on init
   graph = new joint.dia.Graph();
   cells = {};
@@ -45,13 +47,50 @@ export const createPaper = (ref, { width, height }) => {
  * @param {course} course
  * @param {{ text: string, cell: string }} color hex string color for the 2 elements
  */
-export const addCell = (position, id, course, color = {}) => {
-  const { name, total_horas, obligatorio, cod_materia, campo_formacion, unidad_curricular, cursando, materia_aprobada } = course;
-  const { fill, text } = COLORS.CF_COLOR[campo_formacion];
+export const createCellsAndBackground = (position, id, course, color = {}) => {
+  const { unidad_curricular, pos } = course;
   const cell = createCell(id, position, cellStyling(course));
   
-  const x = position.x - 45;
-  const y = position.y - 35
+  // adds background colors
+  fillBackground(position, unidad_curricular, pos);
+  // save cells for rendering and linking
+  cells[id] = cell;
+}
+
+const fillBackground = (() => {
+  let prevPos = 0; // starts at NO course
+  let prevCoor = { x: 0, y: 0 };
+  let prevUC = 'empty';
+  return (coor, unidad_curricular, pos) => {
+    const backgrounds = [];
+    // this means that it skipped a course horizontally, so it must be filled
+    if (coor.y === prevCoor.y && pos - prevPos > 1) {
+      // the for is in case it skipped more than one
+      for (let i = pos - prevPos; i < pos; i++) {
+        prevCoor.x = prevCoor.x + 270;
+        backgrounds.push(createBackgroundCell(prevCoor, prevUC));
+      }
+    }
+    // didnt fill the max number of courses horizontally on last semester
+    if (coor.y !== prevCoor.y && prevPos < maxCourses) {
+      // the for is in case it skipped more than one
+      for (let i = maxCourses - prevPos; i < maxCourses; i++) {
+        prevCoor.x = prevCoor.x + 270;
+        backgrounds.push(createBackgroundCell(prevCoor, prevUC));
+      }
+    }
+    backgrounds.push(createBackgroundCell(coor, unidad_curricular));
+    prevUC = unidad_curricular;
+    prevCoor = { ...coor };
+    prevPos = pos;
+    
+    graph.addCells(backgrounds);
+  }
+})();
+
+const createBackgroundCell = (coor, unidad_curricular) => {
+  const x = coor.x - 45;
+  const y = coor.y - 35
   const background = new joint.shapes.standard.Rectangle({ 
     position: { x, y },
     size: { width: 270, height: 140 }, // + right margin of 70 + 20px, and bottom of 70px
@@ -59,11 +98,7 @@ export const addCell = (position, id, course, color = {}) => {
       body: { fill: COLORS.UC_COLOR[unidad_curricular].fill, stroke: 'none' } 
     }
   });
-  // save cells for linking
-  cells[id] = cell;
-  // positions.push({ ...cell.attributes.position, ucId: unidad_curricular });
-  graph.addCell(background);
-  graph.addCell(cell);
+  return background;
 }
 
 /**
@@ -138,7 +173,7 @@ export const renderCells = (data = []) => {
         x = offset * (width + margin); 
         const cell = `c-malla:${YEAR}-${SEMESTER}-${pos}-${id}`;
         saveCourses(course, YEAR, SEMESTER, cell);
-        addCell({ x, y }, cell, course);
+        createCellsAndBackground({ x, y }, cell, course);
       });
       x = 0;
       y += 70 + margin;
@@ -150,6 +185,10 @@ export const renderCells = (data = []) => {
 
 
 const ordering = () => {
+  // cells are rendered here, because order is important on svgs
+  for (let key in cells) {
+    graph.addCell(cells[key]);
+  }
   for (let key in courses) {
     const { dependants, cellId } = courses[key];
     // only adds links if it has dependants
